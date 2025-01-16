@@ -1,4 +1,4 @@
-# Projeto: Sistema de Monitoramento de Sensores com MQTT
+# Projeto: Sistema de Monitoramento de Sensores com MQTT ( protótipo )
 
 ## **Descrição do Projeto**
 Este projeto é um sistema distribuído para monitoramento de sensores utilizando o protocolo MQTT, uma solução leve e eficiente para comunicação baseada em eventos. Ele é composto por três componentes principais:
@@ -31,9 +31,9 @@ O sistema aborda o problema de validação e monitoramento de dados em tempo rea
 
 ### **2. Requisitos de Software**
 - Python 3.7 ou superior.
-- Biblioteca Paho MQTT: Instale usando o comando:
+- Baixar os modulos do requirements:
   ```bash
-  pip install paho-mqtt
+  pip install -r requirements.txt
   ```
 
 ### **3. Clonar o Repositório**
@@ -44,7 +44,7 @@ cd mqtt-validation-project
 ```
 
 ### **4. Configuração dos Códigos**
-Edite os seguintes arquivos para incluir suas credenciais do HiveMQ:
+Edite os seguintes arquivos para incluir suas credenciais do HiveMQ, criando um arquivo .env e definindo as variáveis de ambiente "user", "password" e "hive_server":
 - **`sensor.py`**: Configurar `broker`, `username` e `password`.
 - **`validator_server.py`**: Configurar `broker`, `username` e `password`.
 - **`alert_client.py`**: Configurar `broker`, `username` e `password`.
@@ -108,19 +108,10 @@ ALERTA: Temperatura fora do intervalo!
 Alerta recebido: ALERTA: Temperatura fora do intervalo! Valor: 31.87
 Alerta recebido: ALERTA: Temperatura fora do intervalo! Valor: 14.22
 ```
-
----
-
-## **Personalização**
-
-- **Intervalo de Temperatura**: Altere as variáveis `TEMPERATURE_MIN` e `TEMPERATURE_MAX` no arquivo `validator_server.py`.
-- **Tópicos**: Atualize os tópicos MQTT nos arquivos para refletir a estrutura do seu projeto.
-
 ---
 
 ## **Considerações Finais**
 
-Este projeto é uma solução modular e escalável para monitoramento de sensores distribuídos. Com ele, é possível integrar diversos sensores, validar dados em tempo real e enviar notificações de forma eficiente. Utilize-o como base para criar sistemas mais complexos ou adaptá-lo às suas necessidades.
+Este projeto é um PROTÓTIPO. É uma solução modular e escalável para monitoramento de sensores distribuídos. Com ele, é possível integrar diversos sensores, validar dados em tempo real e enviar notificações de forma eficiente. Utilize-o como base para criar sistemas mais complexos ou adaptá-lo às suas necessidades.
 
-Se tiver dúvidas ou sugestões, entre em contato!
 
