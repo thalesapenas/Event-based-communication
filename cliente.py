@@ -3,6 +3,7 @@ import random
 import time
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 
@@ -11,6 +12,8 @@ broker = os.getenv("hive_server")
 port = 8883  
 username = os.getenv("user") # Usuário fornecido pelo HiveMQ
 password = os.getenv("password")  # Senha fornecida pelo HiveMQ
+TOPIC = "meuprojeto/sensors/temperature"
+SENSOR_ID = "sensor_01"
 
 # Função chamada quando o cliente se conecta ao broker
 def on_connect(client, userdata, flags, rc):
@@ -21,8 +24,12 @@ def publish_temperature():
     while True:
         # Simula um valor de temperatura
         temperature = random.uniform(10.0, 40.0)
-        print(f"Publicando temperatura: {temperature}")
-        client.publish("meuprojeto/sensors/temperature", str(temperature))
+        payload = {
+            "id": SENSOR_ID,
+            "temperature": temperature
+        }
+        client.publish(TOPIC, json.dumps(payload))
+        print(f"Publicado: {payload}")
         time.sleep(5)  # Publica a cada 5 segundos
 
 # Criando o cliente MQTT

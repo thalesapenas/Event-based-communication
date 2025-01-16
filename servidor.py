@@ -1,6 +1,7 @@
 import paho.mqtt.client as mqtt
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 
@@ -23,14 +24,16 @@ def on_connect(client, userdata, flags, rc):
 
 # Função chamada quando uma mensagem é recebida em um tópico
 def on_message(client, userdata, msg):
-    temperature = float(msg.payload.decode())
-    print(f"Temperatura recebida: {temperature}")
+    payload = json.loads(msg.payload.decode())
+    temperature = payload.get("temperature")
+    sensor_id = payload.get("id")
+    print(f"{sensor_id}: {temperature}")
 
     # Validação da temperatura
     if temperature < TEMPERATURE_MIN or temperature > TEMPERATURE_MAX:
         print("ALERTA: Temperatura fora do intervalo!")
         # Envia uma mensagem de alerta em um tópico de alerta
-        client.publish("meuprojeto/alerts/temperature", f"ALERTA: Temperatura fora do intervalo! Valor: {temperature}")
+        client.publish("meuprojeto/alerts/temperature", f"{sensor_id}: {temperature}")
     else:
         print("Temperatura dentro do intervalo.")
 
