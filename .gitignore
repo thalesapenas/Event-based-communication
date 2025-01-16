@@ -1,0 +1,10 @@
+# Arquivos do Python
+*.pyc
+__pycache__/
+
+# Arquivos de configuração sensíveis
+.env
+
+# Outros arquivos
+node_modules/
+dist/
