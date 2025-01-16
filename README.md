@@ -31,9 +31,9 @@ O sistema aborda o problema de validação e monitoramento de dados em tempo rea
 
 ### **2. Requisitos de Software**
 - Python 3.7 ou superior.
-- Biblioteca Paho MQTT: Instale usando o comando:
+- Baixar os modulos do requirements:
   ```bash
-  pip install paho-mqtt
+  pip install -r requirements.txt
   ```
 
 ### **3. Clonar o Repositório**
