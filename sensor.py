@@ -13,7 +13,7 @@ port = 8883
 username = os.getenv("user") # Usuário fornecido pelo HiveMQ
 password = os.getenv("password")  # Senha fornecida pelo HiveMQ
 TOPIC = "meuprojeto/sensors/temperature"
-SENSOR_ID = "sensor_01"
+SENSOR_ID = "sensor_02"
 
 # Função chamada quando o cliente se conecta ao broker
 def on_connect(client, userdata, flags, rc):
