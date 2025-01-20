@@ -45,9 +45,9 @@ cd mqtt-validation-project
 
 ### **4. Configuração dos Códigos**
 Edite os seguintes arquivos para incluir suas credenciais do HiveMQ, criando um arquivo .env e definindo as variáveis de ambiente "user", "password" e "hive_server":
-- **`sensor.py`**: Configurar `broker`, `username` e `password`.
-- **`validator_server.py`**: Configurar `broker`, `username` e `password`.
-- **`alert_client.py`**: Configurar `broker`, `username` e `password`.
+- **`cliente.py`**: Configurar `broker`, `username` e `password`.
+- **`server.py`**: Configurar `broker`, `username` e `password`.
+- **`cliente_alerta.py`**: Configurar `broker`, `username` e `password`.
 
 ### **5. Executar os Componentes**
 
