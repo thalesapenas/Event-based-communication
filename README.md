@@ -1,7 +1,7 @@
 # Projeto: Sistema de Monitoramento de Sensores com MQTT ( protótipo )
 
 ## **Descrição do Projeto**
-Este projeto é um sistema distribuído para monitoramento de sensores utilizando o protocolo MQTT, uma solução leve e eficiente para comunicação baseada em eventos. Ele é composto por três componentes principais:
+Este projeto é um sistema distribuído para monitoramento de sensores utilizando o protocolo MQTT, uma solução leve e eficiente para comunicação baseada em eventos. Vale ressaltar que esté projeto é a base para realizar alguma solução maior que envolva sensores reais e suas linguagens, podendo ser expandidas em dockers e gerenciadas por kubernetes. Ele é composto por três componentes principais:
 
 1. **Sensores (Clientes)**: Publicam leituras de temperatura em um tópico MQTT.
 2. **Servidor de Validação**: Valida os dados recebidos dos sensores e verifica se estão dentro de um intervalo definido.
