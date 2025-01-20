@@ -54,19 +54,19 @@ Edite os seguintes arquivos para incluir suas credenciais do HiveMQ, criando um 
 #### **Passo 1: Inicie o Sensor (Cliente)**
 Este componente publica dados simulados de temperatura.
 ```bash
-python sensor.py
+python cliente.py
 ```
 
 #### **Passo 2: Inicie o Servidor de Validação**
 Este componente recebe os dados dos sensores, valida-os e publica alertas caso haja anomalias.
 ```bash
-python validator_server.py
+python server.py
 ```
 
 #### **Passo 3: Inicie o Cliente de Alerta**
 Este componente escuta os alertas e exibe notificações de temperatura fora do intervalo esperado.
 ```bash
-python alert_client.py
+python cliente_alerta.py
 ```
 
 ---
